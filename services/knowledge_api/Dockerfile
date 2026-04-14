@@ -1,8 +1,8 @@
 FROM python:3.12-slim
 WORKDIR /app
 RUN apt-get update && apt-get install -y libpq-dev gcc && rm -rf /var/lib/apt/lists/*
-COPY requirements.txt .
+COPY services/knowledge_api/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-COPY ../../schemas /app/schemas
+COPY services/knowledge_api/ .
+COPY schemas/ schemas/
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8003"]

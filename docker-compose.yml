@@ -39,8 +39,8 @@ services:
 
   edge_api:
     build:
-      context: ./services/edge_api
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: services/edge_api/Dockerfile
     ports:
       - "8000:8000"
     environment:
@@ -59,8 +59,8 @@ services:
 
   control_plane:
     build:
-      context: ./services/control_plane
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: services/control_plane/Dockerfile
     ports:
       - "8001:8001"
     environment:
@@ -77,8 +77,8 @@ services:
 
   agent_worker:
     build:
-      context: ./services/agent_worker
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: services/agent_worker/Dockerfile
     ports:
       - "8004:8004"
     environment:
@@ -95,8 +95,8 @@ services:
 
   mcp_server:
     build:
-      context: ./services/mcp_server
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: services/mcp_server/Dockerfile
     ports:
       - "8002:8002"
     restart: unless-stopped
@@ -105,8 +105,8 @@ services:
 
   knowledge_api:
     build:
-      context: ./services/knowledge_api
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: services/knowledge_api/Dockerfile
     ports:
       - "8003:8003"
     environment:
